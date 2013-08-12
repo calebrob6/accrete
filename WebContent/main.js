@@ -20,7 +20,7 @@ var randomTool;
 //void 
 function init()
 {
-    randomTool = new MersenneTwister(1);
+    randomTool = new MersenneTwister();
 }
 
 //void 
