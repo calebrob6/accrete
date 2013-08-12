@@ -3,9 +3,16 @@ accrete
 
 Accrete is a physical simulation of solar system planet formation. This simulation works by modelling a dust cloud around a Sun-like star, injecting a series of masses which collect dust, and form planets by accretion.
 
+This project is to convert the original C project, found at http://sourceforge.net/projects/accrete/, to a pure javascript implementation. A line by line translation of the original code has been done in javascript, however many improvements can still be made. A emscripten compilation of the project is also possible as demonstrated in the emscripten/ directory.
 
-From the original README
-------------------------
+Included in this distribution are the following libraries (BSD liscences can be found in sprintf.js and mtrng.js):
+
+* sprintf.js by alexei, see https://github.com/alexei/sprintf.js
+* mersenne-twister.js by Sean McCullough, see https://gist.github.com/banksean/300494
+
+
+Original README
+===============
 
 Accrete is a physical simulation of solar system planet formation,
 originally published to Usenet-- probably comp.sources.unix-- in 1991
@@ -15,7 +22,7 @@ This simulation works by modelling a dust cloud around a Sun-like star,
 injecting a series of masses which collect dust, and form planets.
 The simulation then determines what the planetary environments will be
 like in terms of temperature, atmospheric composition, and other
-factors.
+factors.  The system description is saved to a file named "New.System".
 
 The following output will give a good idea of the end results:
 
@@ -44,10 +51,9 @@ Planet #4:
 
 ...but I'll include a directory of a few sample runs at some point.  Enjoy.
 
--Chuck Swiger <chuck@pkix.net>
+				-Chuck Swiger <chuck@pkix.net>
 
 
-Included are the following libraries:
-
-* sprintf.js by alexei, see https://github.com/alexei/sprintf.js
-* mersenne-twister.js by Sean McCullough, see https://gist.github.com/banksean/300494
+PS: I've updated this program to use the Mersenne Twister RNG algorithm by
+Takuji Nishimura and Makoto Matsumoto in favor of the old random()/srandom().
+Please see mtrng.c for license (BSD-style) and details.
