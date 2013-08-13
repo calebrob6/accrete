@@ -1,7 +1,3 @@
-var output = function(msg) {
-    document.getElementById("output").innerHTML += msg;
-};
-
 function getSmallestMolecularWeight(m) {
     if (m < MOLECULAR_HYDROGEN)
 	return ("H2");
@@ -99,7 +95,12 @@ var systemToJSON = function(headPointer) {
 };
 
 var display_system = function() {
-
+    
+    /*
+    var output = function(msg) {
+	document.getElementById("output").innerHTML += msg;
+    };
+    
     var node1 ;
     var counter;
 
@@ -158,4 +159,5 @@ var display_system = function() {
 	counter++;
 	node1 = node1.next_planet;
     }
+    */
 };
