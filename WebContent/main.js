@@ -25,6 +25,7 @@ var radians_per_rotation;
 var spin_resonance;
 var randomTool;
 
+
 function generate_stellar_system() {
     var planet;
     radians_per_rotation = 2.0 * PI;
@@ -38,7 +39,7 @@ function generate_stellar_system() {
 	age = random_number(1.0E9, 6.0E9);
     else
 	age = random_number(1.0E9, main_seq_life);
-    r_ecosphere = sqrt(stellar_luminosity_ratio);
+    r_ecosphere = Math.sqrt(stellar_luminosity_ratio);
     r_greenhouse = r_ecosphere * GREENHOUSE_EFFECT_CONST;
 
     while (planet != NULL) {
@@ -83,7 +84,7 @@ function generate_stellar_system() {
 }
 
 function main() {
-    randomTool = new MersenneTwister();
+    randomTool = new MersenneTwister(1);
     generate_stellar_system();
     display_system();
 }
