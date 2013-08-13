@@ -129,48 +129,7 @@ var display_system = function() {
 	output(sprintf("   Escape Velocity (in km/sec):          %7.2f\n", node1.escape_velocity / CM_PER_KM));
 	output(sprintf("   Smallest molecular weight retained:   %7.2f", node1.molecule_weight));
 
-	if (node1.molecule_weight < MOLECULAR_HYDROGEN)
-	    output(sprintf("   (H2)\n"));
-	else if (node1.molecule_weight < HELIUM)
-	    output(sprintf("   (He)\n"));
-	else if (node1.molecule_weight < METHANE)
-	    output(sprintf("   (CH4)\n"));
-	else if (node1.molecule_weight < AMMONIA)
-	    output(sprintf("   (NH3)\n"));
-	else if (node1.molecule_weight < WATER_VAPOR)
-	    output(sprintf("   (H2O)\n"));
-	else if (node1.molecule_weight < NEON)
-	    output(sprintf("   (Ne)\n"));
-	else if (node1.molecule_weight < MOLECULAR_NITROGEN)
-	    output(sprintf("   (N2)\n"));
-	else if (node1.molecule_weight < CARBON_MONOXIDE)
-	    output(sprintf("   (CO)\n"));
-	else if (node1.molecule_weight < NITRIC_OXIDE)
-	    output(sprintf("   (NO)\n"));
-	else if (node1.molecule_weight < MOLECULAR_OXYGEN)
-	    output(sprintf("   (O2)\n"));
-	else if (node1.molecule_weight < HYDROGEN_SULPHIDE)
-	    output(sprintf("   (H2S)\n"));
-	else if (node1.molecule_weight < ARGON)
-	    output(sprintf("   (Ar)\n"));
-	else if (node1.molecule_weight < CARBON_DIOXIDE)
-	    output(sprintf("   (CO2)\n"));
-	else if (node1.molecule_weight < NITROUS_OXIDE)
-	    output(sprintf("   (N2O)\n"));
-	else if (node1.molecule_weight < NITROGEN_DIOXIDE)
-	    output(sprintf("   (NO2)\n"));
-	else if (node1.molecule_weight < OZONE)
-	    output(sprintf("   (O3)\n"));
-	else if (node1.molecule_weight < SULPHUR_DIOXIDE)
-	    output(sprintf("   (SO2)\n"));
-	else if (node1.molecule_weight < SULPHUR_TRIOXIDE)
-	    output(sprintf("   (SO3)\n"));
-	else if (node1.molecule_weight < KRYPTON)
-	    output(sprintf("   (Kr)\n"));
-	else if (node1.molecule_weight < XENON)
-	    output(sprintf("   (Xe)\n"));
-	else
-	    output(sprintf("\n"));
+	output("   "+getSmallestMolecularWeight(node1.molecule_weight)+"\n");
 
 	output(sprintf("   Surface acceleration (in cm/sec2):    %7.2f\n", node1.surface_accel));
 	if (!(node1.gas_giant)) {
